@@ -1,0 +1,12 @@
+
+./euroc_stereo_imu_evaluation/f_MH01_stereo_imu.txt 0.072 0.063 0.062
+./euroc_stereo_imu_evaluation/f_MH02_stereo_imu.txt 0.047 0.041 0.038
+./euroc_stereo_imu_evaluation/f_MH03_stereo_imu.txt 0.045 0.039 0.031
+./euroc_stereo_imu_evaluation/f_MH04_stereo_imu.txt 0.069 0.064 0.066
+./euroc_stereo_imu_evaluation/f_MH05_stereo_imu.txt 0.106 0.096 0.092
+./euroc_stereo_imu_evaluation/f_V101_stereo_imu.txt 0.030 0.027 0.026
+./euroc_stereo_imu_evaluation/f_V102_stereo_imu.txt 0.061 0.058 0.057
+./euroc_stereo_imu_evaluation/f_V103_stereo_imu.txt 0.050 0.043 0.032
+./euroc_stereo_imu_evaluation/f_V201_stereo_imu.txt 0.067 0.064 0.070
+./euroc_stereo_imu_evaluation/f_V202_stereo_imu.txt 0.054 0.050 0.047
+./euroc_stereo_imu_evaluation/f_V203_stereo_imu.txt 0.079 0.073 0.066

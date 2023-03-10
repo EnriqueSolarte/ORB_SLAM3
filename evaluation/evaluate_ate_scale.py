@@ -145,6 +145,8 @@ if __name__=="__main__":
     parser.add_argument('--plot', help='plot the first and the aligned second trajectory to an image (format: png)')
     parser.add_argument('--verbose', help='print all evaluation data (otherwise, only the RMSE absolute translational error in meters after alignment will be printed)', action='store_true')
     parser.add_argument('--verbose2', help='print scale eror and RMSE absolute translational error in meters after alignment with and without scale correction', action='store_true')
+    parser.add_argument('--verbose_results', help='Print verbose results', action='store_true')
+
     args = parser.parse_args()
 
     first_list = associate.read_file_list(args.first_file, False)
@@ -173,9 +175,18 @@ if __name__=="__main__":
     second_xyz_full = numpy.matrix([[float(value)*float(args.scale) for value in second_list[b][0:3]] for b in second_stamps]).transpose()
     second_xyz_full_aligned = scale * rot * second_xyz_full + trans
     
+    if args.verbose_results:
+        rmse = numpy.sqrt(numpy.dot(trans_error,trans_error) / len(trans_error))
+        mean = numpy.mean(trans_error)
+        median = numpy.median(trans_error)
+        std = numpy.std(trans_error)
+        min = numpy.min(trans_error)
+        max = numpy.max(trans_error)
+        print "%s %2.3f %2.3f %2.3f"%(args.second_file, rmse, mean, median)
+    
+    
     if args.verbose:
         print "compared_pose_pairs %d pairs"%(len(trans_error))
-
         print "absolute_translational_error.rmse %f m"%numpy.sqrt(numpy.dot(trans_error,trans_error) / len(trans_error))
         print "absolute_translational_error.mean %f m"%numpy.mean(trans_error)
         print "absolute_translational_error.median %f m"%numpy.median(trans_error)
@@ -183,11 +194,12 @@ if __name__=="__main__":
         print "absolute_translational_error.min %f m"%numpy.min(trans_error)
         print "absolute_translational_error.max %f m"%numpy.max(trans_error)
         print "max idx: %i" %numpy.argmax(trans_error)
-    else:
+    # else:
         # print "%f, %f " % (numpy.sqrt(numpy.dot(trans_error,trans_error) / len(trans_error)),  scale)
         # print "%f,%f" % (numpy.sqrt(numpy.dot(trans_error,trans_error) / len(trans_error)),  scale)
-        print "%f,%f,%f" % (numpy.sqrt(numpy.dot(trans_error,trans_error) / len(trans_error)), scale, numpy.sqrt(numpy.dot(trans_errorGT,trans_errorGT) / len(trans_errorGT)))
+        # print "%f,%f,%f" % (numpy.sqrt(numpy.dot(trans_error,trans_error) / len(trans_error)), scale, numpy.sqrt(numpy.dot(trans_errorGT,trans_errorGT) / len(trans_errorGT)))
         # print "%f" % len(trans_error)
+        
     if args.verbose2:
         print "compared_pose_pairs %d pairs"%(len(trans_error))
         print "absolute_translational_error.rmse %f m"%numpy.sqrt(numpy.dot(trans_error,trans_error) / len(trans_error))

@@ -1,0 +1,12 @@
+
+./euroc_stereo_evaluation/f_MH01_stereo.txt 0.025 0.022 0.024
+./euroc_stereo_evaluation/f_MH02_stereo.txt 0.022 0.019 0.016
+./euroc_stereo_evaluation/f_MH03_stereo.txt 0.030 0.027 0.023
+./euroc_stereo_evaluation/f_MH04_stereo.txt 0.100 0.093 0.077
+./euroc_stereo_evaluation/f_MH05_stereo.txt 0.054 0.046 0.037
+./euroc_stereo_evaluation/f_V101_stereo.txt 0.035 0.032 0.032
+./euroc_stereo_evaluation/f_V102_stereo.txt 0.025 0.022 0.019
+./euroc_stereo_evaluation/f_V103_stereo.txt 0.055 0.039 0.031
+./euroc_stereo_evaluation/f_V201_stereo.txt 0.040 0.036 0.030
+./euroc_stereo_evaluation/f_V202_stereo.txt 0.038 0.032 0.028
+./euroc_stereo_evaluation/f_V203_stereo.txt 0.354 0.322 0.293
